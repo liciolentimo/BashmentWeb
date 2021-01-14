@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!--========== BOX ICONS ==========-->
+        <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+
+        <!--========== CSS ==========-->
+        <!-- <link rel="stylesheet" href="/assets/css/styles.css"> -->
+        <link href="{{ url_for('static', filename='styles.css') }}" rel="stylesheet">
+
+        <title>Bashment</title>
+    </head>
+    <body>
+
+        <!--========== SCROLL TOP ==========-->
+        <a href="#" class="scrolltop" id="scroll-top">
+            <i class='bx bx-chevron-up scrolltop__icon'></i>
+        </a>
+
+        <!--========== HEADER ==========-->
+        <header class="l-header" id="header">
+            <nav class="nav bd-container">
+                <a href="#" class="nav__logo">Bashment</a>
+
+                <div class="nav__menu" id="nav-menu">
+                    <ul class="nav__list">
+                        <li class="nav__item"><a href="#home" class="nav__link active-link">Home</a></li>
+                        <li class="nav__item"><a href="#about" class="nav__link">About</a></li>
+                        <li class="nav__item"><a href="#services" class="nav__link">Services</a></li>
+                        <li class="nav__item"><a href="#menu" class="nav__link">Menu</a></li>
+                        <li class="nav__item"><a href="#contact" class="nav__link">Contact us</a></li>
+
+                        <li><i class='bx bx-moon change-theme' id="theme-button"></i></li>
+                    </ul>
+                </div>
+
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class='bx bx-menu'></i>
+                </div>
+            </nav>
+        </header>
+
+        <main class="l-main">
+            <!--========== HOME ==========-->
+            <section class="home" id="home">
+                <div class="home__container bd-container bd-grid">
+                    <div class="home__data">
+                        <h1 class="home__title">Bashment</h1>
+                        <h2 class="home__subtitle">The real life of<br> the party.</h2>
+                        <a href="#menu" class="button">View Available Drinks</a>
+                    </div>
+    
+                    <img src="{{ url_for('static', filename='jd.png') }}" alt="" class="home__img">
+                </div>
+            </section>
+            
+            <!--========== ABOUT ==========-->
+            <section class="about section bd-container" id="about">
+                <div class="about__container  bd-grid">
+                    <div class="about__data">
+                        <span class="section-subtitle about__initial">About us</span>
+                        <h2 class="section-title about__initial">We deliver precisely<br> at your doostep</h2>
+                        <p class="about__description">We deliver drinks within the entire city, with excellent customer service, the best drinks and at the best price, visit us.</p>
+                        <a href="#" class="button">Explore</a>
+                    </div>
+
+                    <img src="{{ url_for('static', filename='about2.jpg') }}" alt="" class="about__img">
+                </div>
+            </section>
+
+            <!--========== SERVICES ==========-->
+            <section class="services section bd-container" id="services">
+                <span class="section-subtitle">Offering</span>
+                <h2 class="section-title">Our amazing services</h2>
+
+                <div class="services__container  bd-grid">
+                    <div class="services__content">
+                        <img src="https://img.icons8.com/ios/100/069C54/champagne-bottle.png"/>
+           
+                        <h3 class="services__title">Excellent service</h3>
+                        <p class="services__description">We offer our clients excellent quality services for many years, with the best and affordable drinks in the city.</p>
+                    </div>
+
+                    <div class="services__content">
+                        <img src="https://img.icons8.com/ios/100/069C54/glass-of-whiskey.png"/>
+                 
+                        <h3 class="services__title">Variety</h3>
+                        <p class="services__description">We offer our clients excellent quality services for many years, with the best and affordable drinks in the city.</p>
+                    </div>
+
+                    <div class="services__content">
+                        <img src="https://img.icons8.com/ios/100/069C54/delivery--v1.png"/>
+                       
+                        <h3 class="services__title">Delivery</h3>
+                        <p class="services__description">We offer our clients excellent quality services for many years, with the best and affordable drinks in the city.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!--========== MENU ==========-->
+            <section class="menu section bd-container" id="menu">
+                <span class="section-subtitle">Special</span>
+                <h2 class="section-title">Best sellers of the week</h2>
+
+                <div class="menu__container bd-grid">
+                    <div class="menu__content">
+                        <img src="{{ url_for('static', filename='hennessy.png') }}" alt="" class="menu__img">
+                        <h3 class="menu__name">Hennessy</h3>
+                        <span class="menu__detail">Cognac</span>
+                        <span class="menu__preci">$42.00</span>
+                        <a id="buy" class="button menu__button"><button class='bx bx-cart-alt'>Buy</button></a>
+                    </div>
+
+                    <div class="menu__content">
+                        <img src="{{ url_for('static', filename='jd.png') }}" alt="" class="menu__img">
+                        <h3 class="menu__name">Jack Daniels</h3>
+                        <span class="menu__detail">Whisky</span>
+                        <span class="menu__preci">$32.00</span>
+                        <a id="buy2" class="button menu__button"><button class='bx bx-cart-alt'>Buy</button></a>
+                    </div>
+                    
+                    <div class="menu__content">
+                        <img src="{{ url_for('static', filename='vodka.png') }}" alt="" class="menu__img">
+                        <h3 class="menu__name">Smirnoff</h3>
+                        <span class="menu__detail">Vodka</span>
+                        <span class="menu__preci">$9.50</span>
+                        <a id="buy3" class="button menu__button"><button class='bx bx-cart-alt'>Buy</button></a>
+                    </div>
+                </div>
+            </section>
+
+            <!--===== APP =======-->
+            <section class="app section bd-container">
+                <div class="app__container bd-grid">
+                    <div class="app__data">
+                        <span class="section-subtitle app__initial">Download</span>
+                        <h2 class="section-title app__initial">App is available</h2>
+                        <p class="app__description">Find our application and download it, you can make drink orders, see your deliveries on the way and much more.</p>
+                        <div class="app__stores">
+                            <a href="#"><img src="assets/img/app1.png" alt="" class="app__store"></a>
+                            <a href="#"><img src="assets/img/app2.png" alt="" class="app__store"></a>
+                        </div>
+                    </div>
+
+                    <img src="{{ url_for('static', filename='app.png') }}" alt="" class="app__img">
+                </div>
+            </section>
+
+            <!--========== CONTACT US ==========-->
+            <section class="contact section bd-container" id="contact">
+                <div class="contact__container bd-grid">
+                    <div class="contact__data">
+                        <span class="section-subtitle contact__initial">Let's talk</span>
+                        <h2 class="section-title contact__initial">Contact us</h2>
+                        <p class="contact__description">If you want to have your drink delivered, contact us and we will attend to you quickly, with our 24/7 chat service.</p>
+                    </div>
+
+                    <div class="contact__button">
+                        <a href="#" class="button">Contact us now</a>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!--========== FOOTER ==========-->
+        <footer class="footer section bd-container">
+            <div class="footer__container bd-grid">
+                <div class="footer__content">
+                    <a href="#" class="footer__logo">Bashment</a>
+                    <span class="footer__description">Online drinks shop</span>
+                    <div>
+                        <a href="#" class="footer__social"><i class='bx bxl-facebook'></i></a>
+                        <a href="#" class="footer__social"><i class='bx bxl-instagram'></i></a>
+                        <a href="#" class="footer__social"><i class='bx bxl-twitter'></i></a>
+                    </div>
+                </div>
+
+                <div class="footer__content">
+                    <h3 class="footer__title">Services</h3>
+                    <ul>
+                        <li><a href="#" class="footer__link">Delivery</a></li>
+                        <li><a href="#" class="footer__link">Pricing</a></li>
+                        <li><a href="#" class="footer__link">Drinks</a></li>
+                        <li><a href="#" class="footer__link">Hire Us</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer__content">
+                    <h3 class="footer__title">Information</h3>
+                    <ul>
+                        <li><a href="#" class="footer__link">Event</a></li>
+                        <li><a href="#" class="footer__link">Contact us</a></li>
+                        <li><a href="#" class="footer__link">Privacy policy</a></li>
+                        <li><a href="#" class="footer__link">Terms of services</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer__content">
+                    <h3 class="footer__title">Adress</h3>
+                    <ul>
+                        <li>Nairobi - Kenya</li>
+                        <li>Harambee Street 123</li>
+                        <li>0712345678</li>
+                        <li>bashment@email.com</li>
+                    </ul>
+                </div>
+            </div>
+
+            <p class="footer__copy">&#169; 2021 Licio Lentimo. All right reserved</p>
+        </footer>
+
+        <!--========== SCROLL REVEAL ==========-->
+        <script src="https://unpkg.com/scrollreveal"></script>
+
+        <!--========== MAIN JS ==========-->
+        <script src="{{ url_for('static', filename='main.js') }}"></script>
+
+        <script src="https://js.stripe.com/v3/"></script>
+  {#
+  <script>
+      const checkout_public_key = '{{checkout_public_key}}'; 
+      const checkout_session_id = '{{checkout_session_id}}';
+  </script>
+  #}
+  <script src="{{ url_for('static', filename='script-ajax.js') }}"></script>
+    </body>
+</html>
