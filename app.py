@@ -35,8 +35,36 @@ def stripe_pay():
         line_items=[{
             'price': 'price_1I9X9XDE2fV8oQqwJEAnZA13',
             'quantity': 1,
+           
+        }],
+        mode='payment',
+        success_url=url_for('thanks',_external=True) + '?session_id={CHECKOUT_SESSION_ID}',
+        cancel_url=url_for('index',_external=True),
+    )
+    return {'checkout_session_id':session['id'],'checkout_public_key':app.config['STRIPE_PUBLIC_KEY']}
+
+@app.route('/stripe_pay2')
+def stripe_pay2():
+    session = stripe.checkout.Session.create(
+        payment_method_types=['card'],
+        line_items=[{
+            
             'price': 'price_1I9ZVpDE2fV8oQqw9zWX31FR',
             'quantity': 1,
+            
+        }],
+        mode='payment',
+        success_url=url_for('thanks',_external=True) + '?session_id={CHECKOUT_SESSION_ID}',
+        cancel_url=url_for('index',_external=True),
+    )
+    return {'checkout_session_id':session['id'],'checkout_public_key':app.config['STRIPE_PUBLIC_KEY']}
+
+@app.route('/stripe_pay3')
+def stripe_pay3():
+    session = stripe.checkout.Session.create(
+        payment_method_types=['card'],
+        line_items=[{
+           
             'price': 'price_1I9Zg4DE2fV8oQqwRlgyxyXf',
             'quantity': 1,
         }],
@@ -45,6 +73,8 @@ def stripe_pay():
         cancel_url=url_for('index',_external=True),
     )
     return {'checkout_session_id':session['id'],'checkout_public_key':app.config['STRIPE_PUBLIC_KEY']}
+
+  
 
 @app.route('/stripe_webhook', methods=['POST'])
 def stripe_webhook():

@@ -20,7 +20,7 @@ button.addEventListener('click', event=>{
 });
 
 button2.addEventListener('click', event=>{
-    fetch('/stripe_pay')
+    fetch('/stripe_pay2')
     .then((result) => { return result.json(); })
     .then((data) => {
         var stripe = Stripe(data.checkout_public_key);
@@ -38,7 +38,7 @@ button2.addEventListener('click', event=>{
 });
 
 button3.addEventListener('click', event=>{
-    fetch('/stripe_pay')
+    fetch('/stripe_pay3')
     .then((result) => { return result.json(); })
     .then((data) => {
         var stripe = Stripe(data.checkout_public_key);
