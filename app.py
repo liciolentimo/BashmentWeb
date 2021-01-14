@@ -35,7 +35,7 @@ def stripe_pay():
         line_items=[{
             'price': 'price_1I9X9XDE2fV8oQqwJEAnZA13',
             'quantity': 1,
-             'price': 'price_1I9ZVpDE2fV8oQqw9zWX31FR',
+            'price': 'price_1I9ZVpDE2fV8oQqw9zWX31FR',
             'quantity': 1,
             'price': 'price_1I9Zg4DE2fV8oQqwRlgyxyXf',
             'quantity': 1,
