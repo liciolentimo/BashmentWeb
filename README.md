@@ -8,7 +8,7 @@ A web app to order drinks online
 
 [Stripe Checkout](https://github.com/liciolentimo/BashmentWeb/blob/master/screen2.png)
 
-![COVID-19](https://github.com/JacksiroKe/Covid-19/blob/master/covid.png "CoronaVirus Disease 2019 Banner")
+![Landing Page](https://github.com/liciolentimo/BashmentWeb/blob/master/screen1.png "Landing Page")
 
 
 ## Getting Started
