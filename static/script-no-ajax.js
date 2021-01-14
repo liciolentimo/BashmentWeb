@@ -2,7 +2,7 @@ var stripe = Stripe(checkout_public_key);
 
 const button = document.querySelector('#buy');
 const button2 = document.querySelector('#buy2');
-const button2 = document.querySelector('#buy3');
+const button3 = document.querySelector('#buy3');
 button.addEventListener('click', event =>{
     stripe.redirectToCheckout({
         // Make the id field from the Checkout Session creation API response
@@ -29,7 +29,7 @@ button2.addEventListener('click', event =>{
     });
 })
 
-button2.addEventListener('click', event =>{
+button3.addEventListener('click', event =>{
     stripe.redirectToCheckout({
         // Make the id field from the Checkout Session creation API response
         // available to this file, so you can provide it as parameter here
