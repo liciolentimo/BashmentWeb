@@ -4,9 +4,9 @@ A web app to order drinks online
 
 # Screenshots
 
-[Landing Page](https://github.com/liciolentimo/BashmentWeb/blob/master/assets/img/screen1.png)
+[Landing Page](https://github.com/liciolentimo/BashmentWeb/raw/master/screen1.png)
 
-[Stripe Checkout](https://github.com/liciolentimo/BashmentWeb/blob/master/assets/img/screen2.png)
+[Stripe Checkout](https://github.com/liciolentimo/BashmentWeb/raw/master/screen2.png)
 
 
 ## Getting Started
