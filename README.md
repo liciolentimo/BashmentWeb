@@ -21,4 +21,8 @@ Install requirements
 Run the project
 - `python3 app.py`
 
+# Stripe checkout
+
+Use card number 4242 4242 4242 4242 to simulate a payment
+
 
