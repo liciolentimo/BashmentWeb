@@ -23,6 +23,6 @@ Run the project
 
 # Stripe checkout
 
-Use card number 4242 4242 4242 4242 to simulate a payment
+Use card number `4242 4242 4242 4242` to simulate a payment
 
 
