@@ -12,14 +12,11 @@ A web app to order drinks online
 ## Getting Started
 
 - Clone the project `git clone https://github.com/liciolentimo/BashmentWeb.git`
-Create your virtual environment
-- sudo apt install python3-venv
+- `sudo apt install python3-venv` Create your virtual environment
 - python3 -m venv
-- source venv/bin/activate
-Install requirements
-- run `pip install -r requirements.txt`
-Run the project
-- `python3 app.py`
+- `source venv/bin/activate`
+- `pip install -r requirements.txt` Install requirements
+- `python3 app.py` Run the project
 
 # Stripe checkout
 
