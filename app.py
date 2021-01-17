@@ -32,6 +32,10 @@ def thanks():
 def signup():
     return render_template('signup.html')
 
+@app.route('/login')
+def login():
+    return render_template('login.html')
+
 @app.route('/stripe_pay')
 def stripe_pay():
     session = stripe.checkout.Session.create(
