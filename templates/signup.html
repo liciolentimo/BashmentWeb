@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!--========== BOX ICONS ==========-->
+        <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+
+        <!--========== CSS ==========-->
+        
+        <link href="{{ url_for('static', filename='styles.css') }}" rel="stylesheet">
+        <!-- <link href="{{ url_for('static', filename='styles2.css') }}" rel="stylesheet"> -->
+        <link href="{{ url_for('static', filename='normalize.css') }}" rel="stylesheet">
+
+        <title>Sign Up</title>
+    </head>
+<body>
+     <!--========== SCROLL TOP ==========-->
+     <a href="#" class="scrolltop" id="scroll-top">
+        <i class='bx bx-chevron-up scrolltop__icon'></i>
+    </a>
+
+    <!--========== HEADER ==========-->
+    <header class="l-header" id="header">
+        <nav class="nav bd-container">
+            <a href="/" class="nav__logo">Bashment</a>
+
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="/" class="nav__link active-link">Home</a></li>
+                    <li class="nav__item"><a href="/#about" class="nav__link">About</a></li>
+                    <li class="nav__item"><a href="/#services" class="nav__link">Services</a></li>
+                    <li class="nav__item"><a href="/#menu" class="nav__link">Menu</a></li>
+                    <li class="nav__item"><a href="/#contact" class="nav__link">Contact us</a></li>
+                    <li class="nav__item"><a href="/signup" class="nav__link">Login</a></li>
+
+                    <li><i class='bx bx-moon change-theme' id="theme-button"></i></li>
+                </ul>
+            </div>
+
+            <div class="nav__toggle" id="nav-toggle">
+                <i class='bx bx-menu'></i>
+            </div>
+        </nav>
+    </header>
+    
+    <div class="card-wrapper">
+        <div class="card">
+            <h1 class="center">Create An Account</h1>
+            <form action="" name="signup_form">
+                <label for="name">Name</label>
+                <input type="text" name="name" class="field" required>
+
+                <label for="email">Email</label>
+                <input type="email" name="email" class="field" required>
+
+                <label for="password">Password</label>
+                <input type="password" name="password" class="field" required>
+
+                <p class="error error--hidden"></p>
+
+                <input type="submit" value="Sign Up" class="button">
+            </form>
+            <p>Have an account? <a href="#" class="footer__link">Login</a></p>
+        </div>
+    </div>
+    
+    <!--========== FOOTER ==========-->
+    <footer class="footer section bd-container">
+        <div class="footer__container bd-grid">
+            <div class="footer__content">
+                <a href="#" class="footer__logo">Bashment</a>
+                <span class="footer__description">Online drinks shop</span>
+                <div>
+                    <a href="#" class="footer__social"><i class='bx bxl-facebook'></i></a>
+                    <a href="#" class="footer__social"><i class='bx bxl-instagram'></i></a>
+                    <a href="#" class="footer__social"><i class='bx bxl-twitter'></i></a>
+                </div>
+            </div>
+
+            <div class="footer__content">
+                <h3 class="footer__title">Services</h3>
+                <ul>
+                    <li><a href="#" class="footer__link">Delivery</a></li>
+                    <li><a href="#" class="footer__link">Pricing</a></li>
+                    <li><a href="#" class="footer__link">Drinks</a></li>
+                    <li><a href="#" class="footer__link">Hire Us</a></li>
+                </ul>
+            </div>
+
+            <div class="footer__content">
+                <h3 class="footer__title">Information</h3>
+                <ul>
+                    <li><a href="#" class="footer__link">Event</a></li>
+                    <li><a href="#" class="footer__link">Contact us</a></li>
+                    <li><a href="#" class="footer__link">Privacy policy</a></li>
+                    <li><a href="#" class="footer__link">Terms of services</a></li>
+                </ul>
+            </div>
+
+            <div class="footer__content">
+                <h3 class="footer__title">Adress</h3>
+                <ul>
+                    <li>Nairobi - Kenya</li>
+                    <li>Harambee Street 123</li>
+                    <li>0712345678</li>
+                    <li>bashment@email.com</li>
+                </ul>
+            </div>
+        </div>
+
+        <p class="footer__copy">&#169; 2021 Licio Lentimo. All rights reserved</p>
+    </footer>
+
+    <!--========== SCROLL REVEAL ==========-->
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+    <!--========== MAIN JS ==========-->
+    <script src="{{ url_for('static', filename='main.js') }}"></script>
+</body>
+</html>
+   
+

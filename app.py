@@ -28,6 +28,10 @@ def index():
 def thanks():
     return render_template('thanks.html')
 
+@app.route('/signup')
+def signup():
+    return render_template('signup.html')
+
 @app.route('/stripe_pay')
 def stripe_pay():
     session = stripe.checkout.Session.create(
