@@ -7,23 +7,35 @@ from werkzeug.security import check_password_hash, generate_password_hash
 from sqlalchemy.orm import Session
 from sqlalchemy.ext.automap import automap_base
 from sqlalchemy import *
+import os
+
+basedir = os.path.abspath(os.path.dirname(__file__))
 
 app = Flask(__name__)
 
+app.config.from_object(Config)
+DB_URI = app.config['SQLALCHEMY_DATABASE_URI']
+engine = create_engine(DB_URI)
 metadata = MetaData(engine)
 session = Session(engine)
 Base = automap_base()
 Base.prepare(engine, reflect=True)
 Accounts = Base.classes.bashmenttbl
-DB_URI = app.config['SQLALCHEMY_DATABASE_URI']
-engine = create_engine(DB_URI)
+
+
 
 app.config['STRIPE_PUBLIC_KEY'] = 'pk_test_mWaJhKb35BpMP15bfsE1CB9j00aBE0OgQT'
 app.config['STRIPE_SECRET_KEY'] = 'sk_test_51EkSfRDE2fV8oQqwToH4igpoM1SwaQzZU2jebFmSIBCeS5ujOD9k10GcZ9PTrXRVtMXrnsQ5EGvZPduRMTNoAoPw00wbF81B5N'
-app.config.from_object(Config)
+
 
 
 stripe.api_key = app.config['STRIPE_SECRET_KEY']
+
+class Config(object):
+    SQLALCHEMY_TRACK_MODIFICATIONS = True
+    SECRET_KEY = os.urandom(24)
+    env = os.environ['DATABASE_URL'] = 'postgres://yycyfqgyyohwrf:1c2693cc568cb74986c58fc95bed0b6108e93614b710070252356a769735477c@ec2-34-198-31-223.compute-1.amazonaws.com:5432/d9vvnc5cts47mn'
+    SQLALCHEMY_DATABASE_URI = env
 
 @app.route('/')
 def index():
