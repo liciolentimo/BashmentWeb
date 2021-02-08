@@ -67,6 +67,7 @@ def signup():
     engine.execute(account.insert(),name=name,email=email,password=password_hash)
     # return jsonify({'user added': True})
     return render_template('signup.html')
+    
 
 @app.route('/login',methods=["GET","POST"])
 def login():
