@@ -1,8 +1,14 @@
-from flask import Flask, render_template, url_for
+from flask import Flask, render_template, url_for, jsonify
 import stripe
 from config import Config
 from flask_sqlalchemy import SQLAlchemy
-from sqlalchemy import create_engine
+from sqlalchemy import *
+from werkzeug.security import check_password_hash, generate_password_hash
+
+metadata = MetaData(engine)
+Base = automap_base()
+Base.prepare(engine, reflect=True)
+Accounts = Base.classes.bashmenttbl
 
 app = Flask(__name__)
 
@@ -50,7 +56,7 @@ def signup():
 def login():
     email_entered = request.args.get('email')
     password_entered = request.args.get('password')
-    user = session.query(bashment).filter(or_(bashment.email == email_entered)).first()
+    user = session.query(bashment).filter(or_(Accounts.email == email_entered)).first()
     if user is not None and check_password_hash(user.password,password_entered):
         return jsonify({'signed_in': True})
     return render_template('login.html')
