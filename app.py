@@ -2,23 +2,26 @@ from flask import Flask, render_template, url_for, jsonify, request, session
 import stripe
 from config import Config
 from flask_sqlalchemy import SQLAlchemy
-from sqlalchemy import *
+from sqlalchemy import create_engine, MetaData
 from werkzeug.security import check_password_hash, generate_password_hash
+from sqlalchemy.orm import Session
+from sqlalchemy.ext.automap import automap_base
+from sqlalchemy import *
 
 app = Flask(__name__)
 
 metadata = MetaData(engine)
+session = Session(engine)
 Base = automap_base()
 Base.prepare(engine, reflect=True)
 Accounts = Base.classes.bashmenttbl
-
+DB_URI = app.config['SQLALCHEMY_DATABASE_URI']
+engine = create_engine(DB_URI)
 
 app.config['STRIPE_PUBLIC_KEY'] = 'pk_test_mWaJhKb35BpMP15bfsE1CB9j00aBE0OgQT'
 app.config['STRIPE_SECRET_KEY'] = 'sk_test_51EkSfRDE2fV8oQqwToH4igpoM1SwaQzZU2jebFmSIBCeS5ujOD9k10GcZ9PTrXRVtMXrnsQ5EGvZPduRMTNoAoPw00wbF81B5N'
 app.config.from_object(Config)
 
-DB_URI = app.config['SQLALCHEMY_DATABASE_URI']
-engine = create_engine(DB_URI)
 
 stripe.api_key = app.config['STRIPE_SECRET_KEY']
 
