@@ -1,10 +1,17 @@
 from flask import Flask, render_template, url_for
 import stripe
+from config import Config
+from flask_sqlalchemy import SQLAlchemy
+from sqlalchemy import create_engine
 
 app = Flask(__name__)
 
 app.config['STRIPE_PUBLIC_KEY'] = 'pk_test_mWaJhKb35BpMP15bfsE1CB9j00aBE0OgQT'
 app.config['STRIPE_SECRET_KEY'] = 'sk_test_51EkSfRDE2fV8oQqwToH4igpoM1SwaQzZU2jebFmSIBCeS5ujOD9k10GcZ9PTrXRVtMXrnsQ5EGvZPduRMTNoAoPw00wbF81B5N'
+app.config.from_object(Config)
+
+DB_URI = app.config['SQLALCHEMY_DATABASE_URI']
+engine = create_engine(DB_URI)
 
 stripe.api_key = app.config['STRIPE_SECRET_KEY']
 
@@ -28,12 +35,24 @@ def index():
 def thanks():
     return render_template('thanks.html')
 
-@app.route('/signup')
+@app.route('/signup', methods=["GET","POST"])
 def signup():
+    name = request.args.get('name')
+    email = request.args.get('email')
+    password = request.args.get('password')
+    password_hash = generate_password_hash(password)
+    account = Table('bashmenttbl',metadata,autoload=True)
+    engine.execute(account.insert(),name=name,email=email,password=password_hash)
+    # return jsonify({'user added': True})
     return render_template('signup.html')
 
-@app.route('/login')
+@app.route('/login',methods=["GET","POST"])
 def login():
+    email_entered = request.args.get('email')
+    password_entered = request.args.get('password')
+    user = session.query(bashment).filter(or_(bashment.email == email_entered)).first()
+    if user is not None and check_password_hash(user.password,password_entered):
+        return jsonify({'signed_in': True})
     return render_template('login.html')
 
 @app.route('/stripe_pay')
