@@ -59,23 +59,23 @@ def thanks():
 
 @app.route('/signup', methods=["GET","POST"])
 def signup():
-    name = request.args.get('name')
-    email = request.args.get('email')
-    password = request.args.get('password')
-    password_hash = generate_password_hash(password)
-    account = Table('bashmenttbl',metadata,autoload=True)
-    engine.execute(account.insert(),name=name,email=email,password=password_hash)
+    # name = request.args.get('name')
+    # email = request.args.get('email')
+    # password = request.args.get('password')
+    # password_hash = generate_password_hash(password)
+    # account = Table('bashmenttbl',metadata,autoload=True)
+    # engine.execute(account.insert(),name=name,email=email,password=password_hash)
     # return jsonify({'user added': True})
     return render_template('signup.html')
     
 
 @app.route('/login',methods=["GET","POST"])
 def login():
-    email_entered = request.args.get('email')
-    password_entered = request.args.get('password')
-    user = session.query(Accounts).filter(or_(Accounts.email == email_entered)).first()
-    if user is not None and check_password_hash(user.password,password_entered):
-        return jsonify({'signed_in': True})
+    # email_entered = request.args.get('email')
+    # password_entered = request.args.get('password')
+    # user = session.query(Accounts).filter(or_(Accounts.email == email_entered)).first()
+    # if user is not None and check_password_hash(user.password,password_entered):
+    #     return jsonify({'signed_in': True})
     return render_template('login.html')
 
 @app.route('/stripe_pay')
