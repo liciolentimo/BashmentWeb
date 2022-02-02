@@ -13,7 +13,7 @@ A web app to order drinks online
 
 - Clone the project `git clone https://github.com/liciolentimo/BashmentWeb.git`
 - `sudo apt install python3-venv` Create your virtual environment
-- python3 -m venv
+- `python3 -m venv venv`
 - `source venv/bin/activate`
 - `pip install -r requirements.txt` Install requirements
 - `python3 app.py` Run the project
